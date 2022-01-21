@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Okaz.Api", "Okaz.Api\Okaz.Api.csproj", "{DA7892AA-3C37-4826-80C0-8D66C8EC23AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okaz.Core", "Okaz.Core\Okaz.Core.csproj", "{60A8E335-4F68-4E79-86BE-20B48A9C6846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okaz.Infrastructure", "Okaz.Infrastructure\Okaz.Infrastructure.csproj", "{0DAC498A-4759-4CFA-A273-31A438707645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okaz.Application", "Okaz.Application\Okaz.Application.csproj", "{0D3325AA-E092-4AC3-8A92-AC36C1769827}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA7892AA-3C37-4826-80C0-8D66C8EC23AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7892AA-3C37-4826-80C0-8D66C8EC23AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7892AA-3C37-4826-80C0-8D66C8EC23AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7892AA-3C37-4826-80C0-8D66C8EC23AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A8E335-4F68-4E79-86BE-20B48A9C6846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A8E335-4F68-4E79-86BE-20B48A9C6846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A8E335-4F68-4E79-86BE-20B48A9C6846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A8E335-4F68-4E79-86BE-20B48A9C6846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DAC498A-4759-4CFA-A273-31A438707645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DAC498A-4759-4CFA-A273-31A438707645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DAC498A-4759-4CFA-A273-31A438707645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DAC498A-4759-4CFA-A273-31A438707645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D3325AA-E092-4AC3-8A92-AC36C1769827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3325AA-E092-4AC3-8A92-AC36C1769827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3325AA-E092-4AC3-8A92-AC36C1769827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3325AA-E092-4AC3-8A92-AC36C1769827}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C37175A-682D-421B-BDF5-6CDEC0D218D8}
+	EndGlobalSection
+EndGlobal
