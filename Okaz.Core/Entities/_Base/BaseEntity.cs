@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Okaz.Core.Entities.Base
+namespace Okaz.Core.Entities._Base
 {
     class BaseEntity
     {

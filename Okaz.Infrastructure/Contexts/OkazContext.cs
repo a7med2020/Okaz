@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Okaz.Infrastructure.Contexts
 {
-    class OkazContext : IdentityDbContext
+   public class OkazContext : IdentityDbContext
     {
         public OkazContext(DbContextOptions<OkazContext> options) : base(options)
         {
