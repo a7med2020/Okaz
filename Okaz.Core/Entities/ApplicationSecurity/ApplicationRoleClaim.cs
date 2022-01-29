@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Okaz.Core.Entities.ApplicationSecurity
 {
-    public class ApplicationUser : IdentityUser<int>
+   public class ApplicationRoleClaim : IdentityRoleClaim<int>
     {
-
     }
 }

@@ -69,13 +69,24 @@ namespace Okaz.Api
 
             //////////////////////////////////////////////////////////////////////////////////////
             
-            services.AddIdentity<ApplicationUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
                        .AddEntityFrameworkStores<OkazContext>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Okaz.Api", Version = "v1" });
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("DepartmentPolicy",
+                    policy => policy.RequireClaim("department"));
             });
         }
 
