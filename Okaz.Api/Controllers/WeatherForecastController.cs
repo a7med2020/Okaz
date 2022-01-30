@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,7 @@ namespace Okaz.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class WeatherForecastController : ControllerBase
     {
          private static readonly string[] Summaries = new[]
@@ -23,7 +26,7 @@ namespace Okaz.Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet("get")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

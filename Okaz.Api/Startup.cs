@@ -42,6 +42,10 @@ namespace Okaz.Api
               ));
 
             /////////////////// JWT ///////////////////////////////////////////////////
+            ///
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
+               .AddEntityFrameworkStores<OkazContext>();
+
             var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig:Secret"]);
 
             var tokenValidationParams = new TokenValidationParameters
@@ -69,8 +73,7 @@ namespace Okaz.Api
 
             //////////////////////////////////////////////////////////////////////////////////////
             
-            services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
-                       .AddEntityFrameworkStores<OkazContext>();
+      
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
