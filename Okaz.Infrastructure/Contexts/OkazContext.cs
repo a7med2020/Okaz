@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Okaz.Infrastructure.Contexts
 {
-   public class OkazContext : IdentityDbContext<ApplicationUser, ApplicationRole, int>
+   public class OkazContext : IdentityDbContext<ApplicationUser, ApplicationRole, int, ApplicationUserClaim, ApplicationUserRole, ApplicationUserLogin, ApplicationRoleClaim, ApplicationUserToken>
     {
         public OkazContext(DbContextOptions<OkazContext> options) : base(options)
         {
