@@ -193,7 +193,7 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
             var token = jwtTokenHandler.CreateToken(tokenDescriptor);
             var jwtToken = jwtTokenHandler.WriteToken(token);
 
-            var refreshToken = new RefreshToken()
+            var refreshToken = new ApplicationRefreshToken()
             {
                 JwtId = token.Id,
                 IsUsed = false,
@@ -204,7 +204,7 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
                 Token = RandomString(35) + Guid.NewGuid()
             };
 
-            await _apiDbContext.RefreshTokens.AddAsync(refreshToken);
+            await _apiDbContext.ApplicationRefreshTokens.AddAsync(refreshToken);
             await _apiDbContext.SaveChangesAsync();
 
             return new AuthResult()
@@ -289,7 +289,7 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
                 }
 
                 // validation 4 - validate existence of the token
-                var storedToken = await _apiDbContext.RefreshTokens.FirstOrDefaultAsync(x => x.Token == tokenRequest.RefreshToken);
+                var storedToken = await _apiDbContext.ApplicationRefreshTokens.FirstOrDefaultAsync(x => x.Token == tokenRequest.RefreshToken);
 
                 if (storedToken == null)
                 {
@@ -343,7 +343,7 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
                 // update current token 
 
                 storedToken.IsUsed = true;
-                _apiDbContext.RefreshTokens.Update(storedToken);
+                _apiDbContext.ApplicationRefreshTokens.Update(storedToken);
                 await _apiDbContext.SaveChangesAsync();
 
                 // Generate a new token
@@ -375,7 +375,7 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
                     };
                 }
             }
-        }
+        } 
 
         private DateTime UnixTimeStampToDateTime(long unixTimeStamp)
         {

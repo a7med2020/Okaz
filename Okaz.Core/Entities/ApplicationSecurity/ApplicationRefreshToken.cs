@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Okaz.Core.Entities
 {
-    public class RefreshToken
+    public class ApplicationRefreshToken
     {
         public int Id { get; set; }
         public int UserId { get; set; }
