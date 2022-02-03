@@ -54,8 +54,8 @@ namespace Okaz.Api
                 IssuerSigningKey = new SymmetricSecurityKey(key),
                 ValidateIssuer = false,
                 ValidateAudience = false,
-                ValidateLifetime = true,
-                RequireExpirationTime = false,
+                ValidateLifetime = false,
+                RequireExpirationTime = true,
                 ClockSkew = TimeSpan.Zero
             };
 

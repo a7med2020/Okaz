@@ -258,9 +258,20 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
 
             try
             {
+                //ClaimsPrincipal tokenInVerification = new ClaimsPrincipal();
+                //SecurityToken validatedToken = null;
+                //try
+                //{
+                //    // Validation 1 - Validation JWT token format
+                //    tokenInVerification = jwtTokenHandler.ValidateToken(tokenRequest.Token, _tokenValidationParams, out validatedToken);
+                //}
+                //catch (Exception ex)
+                //{
+
+                //}
                 // Validation 1 - Validation JWT token format
                 var tokenInVerification = jwtTokenHandler.ValidateToken(tokenRequest.Token, _tokenValidationParams, out var validatedToken);
-
+               
                 // Validation 2 - Validate encryption alg
                 if (validatedToken is JwtSecurityToken jwtSecurityToken)
                 {
