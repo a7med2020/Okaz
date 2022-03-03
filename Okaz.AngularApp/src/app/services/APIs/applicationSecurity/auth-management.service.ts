@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
@@ -6,5 +7,12 @@ import { Injectable } from '@angular/core';
 })
 export class AuthManagementService {
 
-  constructor() { }
+  constructor(http: HttpClient) { 
+
+    http.get('fgd');
+   
+    
+  }
+
+
 }
