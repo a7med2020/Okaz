@@ -143,6 +143,15 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
             });
         }
 
+
+        //[HttpPost]
+        //[Route("Login")]
+        //public async Task<IActionResult> Login([FromBody] ApplicationUserVM user)
+        //{
+        //    return null;
+        //}
+
+
         [HttpPost]
         [Route("RefreshToken")]
         public async Task<IActionResult> RefreshToken([FromBody] TokenRequest tokenRequest)

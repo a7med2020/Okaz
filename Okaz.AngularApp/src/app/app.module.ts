@@ -11,7 +11,7 @@ import { LoginComponent } from './components/applicationSecurity/login/login.com
 import { AnglrThemeComponent } from './components/themeTemplates/anglr-theme/anglr-theme.component';
 import { MainThemeComponent } from './components/themeTemplates/main-theme/main-theme.component';
 import {HttpClientModule} from '@angular/common/http'
-import {HttpClient} from '@angular/common/http'
+ 
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import {HttpClient} from '@angular/common/http'
     ]),
     NgbModule,
     HttpClientModule,
-    HttpClient
+     
   ],
   providers: [],
   bootstrap: [AppComponent]
