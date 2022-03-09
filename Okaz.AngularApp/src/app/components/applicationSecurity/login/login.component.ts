@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(private authManagementService: AuthManagementService) {    }
 
   signIn(credentials) {
-
+    this.authManagementService.getd();
     const user : ApplicationUser ={
        email : credentials.email,
        userName : credentials.email,
@@ -33,3 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+
+
+

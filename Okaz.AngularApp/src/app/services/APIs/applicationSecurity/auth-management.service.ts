@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
-import { ApplicationUser, LoginResponse, RegistrationResponse } from 'src/app/interfaces/applicationSecurity';
+import { ApplicationUser, com, LoginResponse, RegistrationResponse } from 'src/app/interfaces/applicationSecurity';
  
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,6 +30,12 @@ export class AuthManagementService {
     const url = `${this.apiUrl}/Login`;
     alert(url);
     return this.http.post<LoginResponse[]>(url,applicationUser,httpOptions);
+  }
+
+ getd() {
+     var a =  this.http.get<com>("https://sso.esol.dev/Sales/webapi/sso/GetBranches");
+     console.log(a.subscribe());
+    
   }
 
 //   deleteTask(task: Task): Observable<Task>{

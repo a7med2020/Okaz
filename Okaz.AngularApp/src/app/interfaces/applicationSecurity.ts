@@ -13,6 +13,12 @@ export interface ApplicationUser {
 
   }
 
+  export interface com {
+    ID: string;
+    Nam: string;
+    
+
+  }
 
   export interface RegistrationResponse extends  AuthResult {}
   export interface LoginResponse extends  AuthResult {}
