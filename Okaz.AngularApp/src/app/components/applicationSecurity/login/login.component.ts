@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApplicationUser } from 'src/app/interfaces/applicationSecurity';
+import { ApplicationUser,AuthResult } from 'src/app/interfaces/applicationSecurity';
 import { AuthManagementService} from 'src/app/services/APIs/applicationSecurity/auth-management.service';
 
 @Component({
@@ -18,17 +18,27 @@ export class LoginComponent implements OnInit {
   constructor(private authManagementService: AuthManagementService) {    }
 
   signIn(credentials) {
-    this.authManagementService.getd();
+   
     const user : ApplicationUser ={
        email : credentials.email,
        userName : credentials.email,
        password : credentials.password
     };
 
-    var result = this.authManagementService.login(user);
+   
+    // var result = this.authManagementService.login(user)
+    // .subscribe((data: AuthResult) =>  alert(data.Token));
+    
+    var p =  new Promise((resolve, reject) => {
+      this.authManagementService.login(user).subscribe((response) => {
+        resolve(response);
+      }, (error) => {
+        console.error(error);
+        reject();
+      });
+    });
 
-    alert(result);
-
+    console.log(p);
     this.invalidLogin = true; 
   }
 

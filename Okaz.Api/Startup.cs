@@ -86,6 +86,8 @@ namespace Okaz.Api
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
 
+
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("DepartmentPolicy",
@@ -104,6 +106,11 @@ namespace Okaz.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Okaz.Api v1"));
             }
+
+            app.UseCors(x => x
+           .AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
 
             app.UseHttpsRedirection();
 

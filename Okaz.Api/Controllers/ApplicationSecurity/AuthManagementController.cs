@@ -99,7 +99,7 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
 
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login([FromBody] ApplicationUserVM user)
+        public async Task<IActionResult> Login(ApplicationUserVM user)
         {
             if (ModelState.IsValid)
             {
@@ -144,15 +144,26 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
         }
 
 
-        //[HttpPost]
-        //[Route("Login")]
-        //public async Task<IActionResult> Login([FromBody] ApplicationUserVM user)
-        //{
-        //    return null;
-        //}
-
-
         [HttpPost]
+        [Produces("application/json")]
+        [Route("Login2")]
+        public string Login2([FromBody] ApplicationUserVM user)
+        {
+            return user.Email;
+        }
+
+
+
+
+            //[HttpPost]
+            //[Route("Login")]
+            //public async Task<IActionResult> Login([FromBody] ApplicationUserVM user)
+            //{
+            //    return null;
+            //}
+
+
+            [HttpPost]
         [Route("RefreshToken")]
         public async Task<IActionResult> RefreshToken([FromBody] TokenRequest tokenRequest)
         {

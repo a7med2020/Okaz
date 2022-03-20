@@ -10,7 +10,8 @@ import { LoginComponent } from './components/applicationSecurity/login/login.com
 
 import { AnglrThemeComponent } from './components/themeTemplates/anglr-theme/anglr-theme.component';
 import { MainThemeComponent } from './components/themeTemplates/main-theme/main-theme.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { TasksComponent } from './components/tasks/tasks.component'
  
 
 @NgModule({
@@ -18,10 +19,12 @@ import {HttpClientModule} from '@angular/common/http'
     AppComponent,
     LoginComponent,
     AnglrThemeComponent,
-    MainThemeComponent
+    MainThemeComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
+     HttpClientModule,
     FormsModule,
     AppRoutingModule,
    
@@ -31,7 +34,7 @@ import {HttpClientModule} from '@angular/common/http'
       { path: 'themeTemplates/MainTheme/MainThemeComponent', component: MainThemeComponent },
     ]),
     NgbModule,
-    HttpClientModule,
+   
      
   ],
   providers: [],
