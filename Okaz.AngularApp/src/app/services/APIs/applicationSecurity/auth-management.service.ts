@@ -27,7 +27,7 @@ export class AuthManagementService {
   currentUser: any;
   
   private apiUrl='http://localhost:5000/api/AuthManagement'
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private jwthelper:JwtHelperService) { }
 
   register(applicationUser : ApplicationUser ): Observable<RegistrationResponse>{
     const url = `${this.apiUrl}/Register`;
@@ -62,8 +62,7 @@ export class AuthManagementService {
   
 
   isLoggedIn() { 
-    let jwthelper  = new JwtHelperService();
-    return jwthelper.isTokenExpired('token');
+    return this.jwthelper.isTokenExpired('token');
   }
 
   // isLoggedIn() { 

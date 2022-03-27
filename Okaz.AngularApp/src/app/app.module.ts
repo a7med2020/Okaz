@@ -13,6 +13,8 @@ import { MainThemeComponent } from './components/themeTemplates/main-theme/main-
 import {HttpClientModule} from '@angular/common/http';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { HomeComponent } from './components/home/home.component'
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthGuard } from './services/auth-guard.service';
  
 
 @NgModule({
@@ -31,16 +33,19 @@ import { HomeComponent } from './components/home/home.component'
     AppRoutingModule,
    
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: HomeComponent , canActivate: [AuthGuard] },
       { path: 'login', component: LoginComponent },
-      { path: 'themeTemplates/MainTheme/AnglrThemeComponent', component: AnglrThemeComponent },
+      { path: 'themeTemplates/MainTheme/AnglrThemeComponent', component: AnglrThemeComponent},
       { path: 'themeTemplates/MainTheme/MainThemeComponent', component: MainThemeComponent },
     ]),
     NgbModule,
    
      
   ],
-  providers: [],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
