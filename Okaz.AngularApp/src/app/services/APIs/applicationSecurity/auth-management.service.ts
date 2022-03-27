@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable, observable } from 'rxjs';
+import { catchError, map, Observable, observable, throwError } from 'rxjs';
 import { ApplicationUser, com, LoginResponse, RegistrationResponse } from 'src/app/interfaces/applicationSecurity';
+import { JwtHelperService } from '@auth0/angular-jwt';
+ 
+ 
  
 
 const httpOptions = {
@@ -21,7 +24,8 @@ const headers = { 'content-type': 'application/json'}
 
 
 export class AuthManagementService {
-
+  currentUser: any;
+  
   private apiUrl='http://localhost:5000/api/AuthManagement'
   constructor(private http:HttpClient) { }
 
@@ -30,15 +34,41 @@ export class AuthManagementService {
     return this.http.post<RegistrationResponse>(url,applicationUser,httpOptions);
   }
 
-  login(applicationUser : ApplicationUser ): Observable<LoginResponse>{
-     
+  // login(applicationUser : ApplicationUser ): Observable<LoginResponse>{
+  //   const url = `${this.apiUrl}/Login`;
+  //   return this.http.post<LoginResponse>(url, applicationUser,httpOptions);
+  // }
+
+
+  login(applicationUser : ApplicationUser ){
     const url = `${this.apiUrl}/Login`;
-     
-    return this.http.post<LoginResponse>(url, applicationUser,httpOptions);
+    return this.http.post(url, applicationUser,httpOptions)
+    .pipe(
+      catchError(err => {
+        console.log('err', err);
+        return throwError('Something bad happened; please try again later.');
+      }) 
+      // let jwt = new JwtHelper();
+      //   this.currentUser = jwt.decodeToken(localStorage.getItem('token'));
+      )
      
   }
 
+
+ logout() { 
+    localStorage.removeItem('token');
+    this.currentUser = null;
+  }
   
+
+  isLoggedIn() { 
+    let jwthelper  = new JwtHelperService();
+    return jwthelper.isTokenExpired('token');
+  }
+
+  // isLoggedIn() { 
+  //   return tokenNotExpired('token');
+  // }
 
 //   deleteTask(task: Task): Observable<Task>{
 //      const url = `${this.apiUrl}/${task.id}`;

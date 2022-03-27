@@ -107,12 +107,14 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
 
                 if (existingUser == null)
                 {
-                    return BadRequest(new RegistrationResponse()
+                    return Ok( new AuthResult()
                     {
+                        Token = null,
+                        Success = false,
+                        RefreshToken = null,
                         Errors = new List<string>() {
                                 "Invalid login request"
                             },
-                        Success = false
                     });
                 }
 
@@ -120,12 +122,14 @@ namespace Okaz.Api.Controllers.ApplicationSecurity
 
                 if (!isCorrect)
                 {
-                    return BadRequest(new RegistrationResponse()
+                    return Ok(new AuthResult()
                     {
+                        Token = null,
+                        Success = false,
+                        RefreshToken = null,
                         Errors = new List<string>() {
                                 "Invalid login request"
                             },
-                        Success = false
                     });
                 }
 

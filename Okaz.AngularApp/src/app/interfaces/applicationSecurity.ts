@@ -6,10 +6,10 @@ export interface ApplicationUser {
 
 
   export interface AuthResult {
-    Token: string;
-    RefreshToken: string;
-    Success: boolean;
-    Errors: string[];
+    token: string;
+    refreshToken: string;
+    success: boolean;
+    errors: string[];
 
   }
 
