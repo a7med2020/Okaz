@@ -11,7 +11,6 @@ import { LoginComponent } from './components/applicationSecurity/login/login.com
 import { AnglrThemeComponent } from './components/themeTemplates/anglr-theme/anglr-theme.component';
 import { MainThemeComponent } from './components/themeTemplates/main-theme/main-theme.component';
 import {HttpClientModule} from '@angular/common/http';
-import { TasksComponent } from './components/tasks/tasks.component';
 import { HomeComponent } from './components/home/home.component'
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AuthGuard } from './services/auth-guard.service';
@@ -23,7 +22,6 @@ import { AuthGuard } from './services/auth-guard.service';
     LoginComponent,
     AnglrThemeComponent,
     MainThemeComponent,
-    TasksComponent,
     HomeComponent
   ],
   imports: [
@@ -44,8 +42,10 @@ import { AuthGuard } from './services/auth-guard.service';
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    JwtHelperService
+    JwtHelperService,
+    AuthGuard
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

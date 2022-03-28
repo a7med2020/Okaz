@@ -62,7 +62,8 @@ export class AuthManagementService {
   
 
   isLoggedIn() { 
-    return this.jwthelper.isTokenExpired('token');
+    //alert(localStorage.getItem('token'));
+    return !this.jwthelper.isTokenExpired(localStorage.getItem('token')??"");
   }
 
   // isLoggedIn() { 
