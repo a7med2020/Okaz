@@ -27,10 +27,14 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+             "./src/assets/ytsStyle/css/fonts.css",
+             "./src/assets/ytsStyle/css/2bacb5de663bc55f0cbed2b4a7d1504dc.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+              "./src/assets/ytsStyle/css/fonts.css",
+              "./src/assets/ytsStyle/css/2bacb5de663bc55f0cbed2b4a7d1504dc.css"
+            ]
           },
           "configurations": {
             "production": {
