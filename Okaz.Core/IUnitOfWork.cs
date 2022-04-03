@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Okaz.Core.Entities;
+using Okaz.Core.IRepositories._Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +10,7 @@ namespace Okaz.Core
 {
     public interface IUnitOfWork : IDisposable
     {
-        //ICourseRepository Courses { get; }
+        IBaseRepository<Item> ItemRepository { get; }
         int Complete();
     }
 }

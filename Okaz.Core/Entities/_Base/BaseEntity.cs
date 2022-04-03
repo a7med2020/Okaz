@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Okaz.Core.Entities._Base
 {
-    class BaseEntity
+   public class BaseEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key, Column(Order = 0)]

@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Okaz.Infrastructure.Repositories._Base
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly OkazContext _okazContext;
 
-        public Repository(OkazContext employeeContext)
+        public BaseRepository(OkazContext employeeContext)
         {
             _okazContext = employeeContext;
         }
@@ -30,7 +30,7 @@ namespace Okaz.Infrastructure.Repositories._Base
             await _okazContext.SaveChangesAsync();
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync()
+        public async Task<List<T>> GetAllAsync()
         {
             return await _okazContext.Set<T>().ToListAsync();
         }

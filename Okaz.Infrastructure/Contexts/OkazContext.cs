@@ -18,7 +18,7 @@ namespace Okaz.Infrastructure.Contexts
         }
 
         public DbSet<ApplicationRefreshToken> ApplicationRefreshTokens { get; set; }
-
+        public DbSet<Item> Items { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

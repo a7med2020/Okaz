@@ -1,5 +1,8 @@
 ﻿using Okaz.Core;
+using Okaz.Core.Entities;
+using Okaz.Core.IRepositories._Base;
 using Okaz.Infrastructure.Contexts;
+using Okaz.Infrastructure.Repositories._Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +18,11 @@ namespace Okaz.Infrastructure
         public UnitOfWork(OkazContext context)
         {
             _okazContext = context;
-            //Courses = new CourseRepository(_okazContext);
+            ItemRepository = new BaseRepository<Item>(_okazContext);
         }
 
-        //public ICourseRepository Courses { get; private set; }
-     
+        public IBaseRepository<Item> ItemRepository { get; }
+
         public int Complete()
         {
             return _okazContext.SaveChanges();
