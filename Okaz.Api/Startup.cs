@@ -19,6 +19,10 @@ using Okaz.Core.VMs;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Okaz.Application.IServices;
+using Okaz.Application.Services;
+using Okaz.Core;
+using Okaz.Infrastructure;
 
 namespace Okaz.Api
 {
@@ -45,6 +49,10 @@ namespace Okaz.Api
             ///
             services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddEntityFrameworkStores<OkazContext>();
+
+            services.AddSingleton<OkazContext>();
+            services.AddSingleton<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<IBusiness, Business>();
 
             var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig:Secret"]);
 
@@ -86,7 +94,8 @@ namespace Okaz.Api
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
 
-
+           
+           
 
             services.AddAuthorization(options =>
             {

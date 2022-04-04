@@ -6,14 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Okaz.Core.Entities;
 using Okaz.Application.IServices.ItemServices;
+using Okaz.Core;
 
 namespace Okaz.Application.Services.ItemServices
 {
     public class ItemService : IItemService
     {
-        protected readonly UnitOfWork _unitOfWork;
+        protected readonly IUnitOfWork _unitOfWork;
 
-        public ItemService(UnitOfWork unitOfWork)
+        public ItemService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
