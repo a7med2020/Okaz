@@ -49,10 +49,10 @@ namespace Okaz.Api
             ///
             services.AddIdentity<ApplicationUser, ApplicationRole>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddEntityFrameworkStores<OkazContext>();
-
-            services.AddSingleton<OkazContext>();
-            services.AddSingleton<IUnitOfWork, UnitOfWork>();
-            services.AddSingleton<IBusiness, Business>();
+            services.AddMvc();
+            //services.AddSingleton<OkazContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IBusiness, Business>();
 
             var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig:Secret"]);
 
