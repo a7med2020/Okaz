@@ -183,37 +183,12 @@
     </div>
     <div class="browse-content">
         <div class="container">
-            <h2><b>39,444</b><span style="font-size: 90%;"> <span style="color: #00BBCC"></span> YIFY Movies found</span></h2>
-            <div class="hidden-sm hidden-xs">
-                <ul class="tsc_pagination tsc_paginationA tsc_paginationA06">
-                    <li class="hidden"><a href="https://yts.mx/browse-movies">«</a></li>
-                    <li><a href="javascript:void(0)" class="current">1</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=2">2</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=3">3</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=4">4</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=5">5</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=6">6</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=7">7</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=8">8</a></li>
-                    <li class="unavailable">...</li>
-                    <li><a href="https://yts.mx/browse-movies?page=1972">1972</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=1973">1973</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=2">Next »</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=1973">Last »</a></li>
-                </ul>
-            </div>
-            <div class="hidden-md hidden-lg">
-                <ul class="tsc_pagination tsc_paginationA tsc_paginationA06">
-                    <li class="pagination-bordered">1 of 1973</li>
-                    <li><a href="https://yts.mx/browse-movies?page=2">Next »</a></li>
-                </ul>
-            </div>
             <section>
                 <div class="row">
                     <div class="browse-movie-wrap col-xs-10 col-sm-4 col-md-5 col-lg-4" *ngFor="let item of itemService.itemList">
                         <a href="https://yts.mx/movies/ministry-of-fear-1944" class="browse-movie-link">
                             <figure>
-                                <img class="img-responsive" src="./assets/ytsStyle/images/medium-cover.jpg" alt="{{item.name}}" width="170" height="255">
+                                <img class="img-responsive" src="./assets/ytsStyle/images/medium-cover({{item.id}}).jpg" alt="{{item.name}}" width="170" height="255">
                                 <figcaption class="hidden-xs hidden-sm">
                                     <span class="icon-star"></span>
                                     <h4 class="rating">7.2 / 10</h4> <h4>Crime</h4>
@@ -224,35 +199,13 @@
                         </a>
                         <div class="browse-movie-bottom">
                             <a href="https://yts.mx/movies/ministry-of-fear-1944" class="browse-movie-title">{{item.name}}</a>
+                            <br/>
                             <div class="browse-movie-year">1944</div>
                         </div>
                     </div>
                     </div>
             </section>
-            <div class="hidden-sm hidden-xs">
-                <ul class="tsc_pagination tsc_paginationA tsc_paginationA06">
-                    <li class="hidden"><a href="https://yts.mx/browse-movies">«</a></li>
-                    <li><a href="javascript:void(0)" class="current">1</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=2">2</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=3">3</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=4">4</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=5">5</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=6">6</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=7">7</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=8">8</a></li>
-                    <li class="unavailable">...</li>
-                    <li><a href="https://yts.mx/browse-movies?page=1972">1972</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=1973">1973</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=2">Next »</a></li>
-                    <li><a href="https://yts.mx/browse-movies?page=1973">Last »</a></li>
-                </ul>
-            </div>
-            <div class="hidden-md hidden-lg">
-                <ul class="tsc_pagination tsc_paginationA tsc_paginationA06">
-                    <li class="pagination-bordered">1 of 1973</li>
-                    <li><a href="https://yts.mx/browse-movies?page=2">Next »</a></li>
-                </ul>
-            </div>
+             
         </div>
     </div>
     <div class="container hidden-md hidden-lg">
