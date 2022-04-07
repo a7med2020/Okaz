@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace Okaz.Core.Entities._Base
 {
-   public class BaseEntity
+    public class BaseEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key, Column(Order = 0)]
         public int ID { get; set; }
+
+        public int CompanyID { get; set; }
         public bool IsDeleted { get; set; }
         public int CreatedBy { get; set; }
         public int? ModefiedBy { get; set; }
