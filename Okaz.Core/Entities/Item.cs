@@ -26,6 +26,10 @@ namespace Okaz.Core.Entities
         [ForeignKey("ItemType")]
         public string TypeID { get; set; }
 
+        public decimal Price1 { get; set; }
+        public decimal Price2 { get; set; }
+        public decimal Price3 { get; set; }
+
         public int ReorderLevel { get; set; }
         public bool IsAddedFromExcel { get; set; }
         public bool IsEnabled { get; set; }

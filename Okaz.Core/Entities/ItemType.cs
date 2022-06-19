@@ -13,7 +13,7 @@ namespace Okaz.Core.Entities
         public string ID { get; set; }
         [Required]
         [StringLength(100)]
-        public string NameAr { get; set; }
+        public string Name { get; set; }
         public string Notes { get; set; }
     }
 }

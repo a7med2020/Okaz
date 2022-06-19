@@ -15,5 +15,6 @@ namespace Okaz.Core.Entities
         public string Name { get; set; }
 
         public string ImagePath { get; set; }
+        
     }
 }

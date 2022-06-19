@@ -20,6 +20,6 @@ namespace Okaz.Core.Entities._Base
         public int? ModefiedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ModefiedDate { get; set; }
-       
+        public string Notes { get; set; }
     }
 }
